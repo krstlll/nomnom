@@ -11,7 +11,7 @@ const Navbar = () => {
       <img src={assets.logo} alt="" className="logo"/> 
       <ul className="navbar-menu">
         <li className={menu === "home" ? "active" : ""}>
-          <Link to="https://krstlll.github.io/nomnom/" onClick={() => setMenu("home")}>home</Link>
+          <Link to="/" onClick={() => setMenu("home")}>home</Link>
         </li>
         <li className={menu === "menu" ? "active" : ""}>
           <a href="#explore-menu" onClick={() => setMenu("menu")}>menu</a>
