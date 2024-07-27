@@ -1,17 +1,18 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 
-const Navbar = ({ setShowLogin })
+const Navbar = ({ setShowLogin }) => { // Added the missing curly braces
+
   const [menu, setMenu] = useState("home");
 
-  const {getTotalCartAmount} = useContext(StoreContext);
+  const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
     <div className="navbar">
-      <img src={assets.logo} alt="" className="logo"/> 
+      <img src={assets.logo} alt="Logo" className="logo"/> 
       <ul className="navbar-menu">
         <li className={menu === "home" ? "active" : ""}>
           <Link to="/" onClick={() => setMenu("home")}>home</Link>
@@ -24,10 +25,10 @@ const Navbar = ({ setShowLogin })
         </li>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
+        <img src={assets.search_icon} alt="Search" />
         <div className="navbar-search-icon">
-          <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
-          <div className={getTotalCartAmount()===0?"":"dot"}></div>
+          <Link to='/cart'><img src={assets.basket_icon} alt="Basket" /></Link>
+          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
         <button onClick={() => setShowLogin(true)}>Sign In</button>
       </div>
