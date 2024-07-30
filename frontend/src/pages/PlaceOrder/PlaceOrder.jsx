@@ -54,7 +54,7 @@ const PlaceOrder = () => {
       console.log(session_url);
       window.location.replace(session_url);
     } else {
-      alert("ERROR");
+      alert("Order Placed");
     }
 
     console.log(orderItems);
